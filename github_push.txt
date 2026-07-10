@@ -1,0 +1,76 @@
+### Git 工作流程指南（~/ros2_ws/src）
+
+# 這個資料夾目前已經是設定好的 Git 倉庫：
+#   - 分支：main
+#   - 遠端：origin -> https://github.com/m11403602-byte/0710_dual_arm_robot_code_fi.git
+#   - 本機 main 已追蹤 origin/main
+#
+# 以下分成兩部分：
+#   1. 第一次上傳（全新機器 / 全新資料夾，之前從沒有連過這個 GitHub 倉庫時才需要）
+#   2. 日常上傳（平常改完程式，最常用的三步驟）
+
+---
+
+### 1. 第一次上傳（只在全新機器 / 全新資料夾時執行一次）
+
+# 情境 A：這台機器上還沒有任何程式碼，直接把 GitHub 上的內容抓下來
+git clone https://github.com/m11403602-byte/0710_dual_arm_robot_code_fi.git ~/ros2_ws/src
+# 抓下來之後直接進入「日常上傳」的流程即可，不用再做下面情境 B 的步驟。
+
+cd ~/ros2_ws/src
+
+# 情境 B：這台機器上已經有寫好的程式碼資料夾，但還沒被 git 追蹤過，要把它變成
+#         這個 GitHub 倉庫的內容（例如目前這個 ~/ros2_ws/src）
+
+git init --initial-branch=main
+# 在目前資料夾建立一個新的 git 倉庫，分支直接命名為 main
+# （如果這個資料夾之前已經是 git 倉庫，這行會被跳過或提示 already exists，忽略即可）
+
+git remote add origin https://github.com/m11403602-byte/0710_dual_arm_robot_code_fi.git
+# 把這個新倉庫連到 GitHub 上的遠端位址，並命名為 origin
+# 如果出現 'remote origin already exists'，代表已經連過了；
+# 要換網址的話改用： git remote set-url origin <新網址>
+
+git add .
+# 把資料夾內所有檔案加入暫存區，準備第一次提交
+
+git commit -m "first commit"
+# 建立第一個 commit，訊息可自行更換
+
+git push -u origin main
+# 把本機 main 分支推上 GitHub，並設定追蹤關係（-u）
+# 之後同一個資料夾就可以直接用「git push」，不用再打完整網址跟分支名稱
+#
+# 如果 GitHub 上這個倉庫已經有內容（例如之前用網頁上傳過檔案），這裡可能會被拒絕，
+# 這時候要先確認你是否要保留遠端內容：
+#   - 要保留並合併：先執行 git pull --rebase origin main，再重跑這行 git push -u origin main
+#   - 要用本機內容整個蓋掉遠端（放棄遠端現有內容）：
+#     git push -u origin main --force
+#     ⚠️ --force 會把 GitHub 上原本的版本歷史整個換掉，確定要蓋掉才用
+
+---
+
+### 2. 日常上傳（平常改完程式最常用，就這三行）
+
+cd ~/ros2_ws/src
+# 進入這個 git 倉庫所在的資料夾
+
+git add .
+# 把所有變更（新增/修改/刪除的檔案）加入暫存區
+
+git commit -m "你的提交訊息"
+# 把暫存區的內容包成一個 commit，訊息請寫這次改了什麼
+
+git push
+# 推上 GitHub 的 origin main
+# （已經設定過追蹤關係，不用再打完整的 git push origin master:main --force）
+
+---
+
+### 3. 如果 git push 被拒絕（遠端有本機還沒有的新變更）
+
+git pull --rebase origin main
+# 先把遠端的新變更拉下來，用 rebase 方式接到本機 commit 後面（歷史比較乾淨）
+
+git push
+# 拉下來、確認沒有衝突後再推上去
