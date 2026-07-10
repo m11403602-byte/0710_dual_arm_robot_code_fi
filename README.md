@@ -1,6 +1,6 @@
 # HIWIN 雙機械手臂 ROS 2（Humble）避障路徑規劃使用手冊
 
-本工作區（`~/hiwin_ws/src/`）共有**9 個 ROS 2 package**：機器人描述包
+本工作區（`~/hiwin_ws/src/`）共有 **9 個 ROS 2 package**：機器人描述包
 `hiwin_dual_arm_description`、MoveIt2 設定包 `hiwin_dual_arm`、
 實機跨域橋接包 `dual_arm_domain_bridge`，以及 6 個可選擇的雙臂避障規劃器。
 各規劃器的演算法推導與參數對照表，請見其各自的 `README.md` 與 `PARAMETERS.md`。
@@ -113,9 +113,9 @@ ros2 launch dual_arm_domain_bridge bridge_relay.launch.py \
 
 橋接建立後，RViz 的 **Plan & Execute / Stop** 即可直接對實機（或虛擬硬體）使用。
 
-### 4.2 臂側驅動
+### 4.2 手臂端
 
-臂側工控機須事先依上銀官方方式，將 hiwin_ros2（`hiwin_driver`）安裝於 `~/ws_ros2`（見 §7）。
+手臂控制器須事先依上銀官方方式，將 hiwin_ros2（`hiwin_driver`）安裝於 `~/ws_ros2`（見 §7）。
 
 **前置**（每個終端機開頭）：
 
