@@ -3,7 +3,7 @@
 > ⚠️ **這個 repo 本身就是一個 ROS 2 workspace 的 `src/` 內容**（repo 根目錄直接是 9 個
 > package，不含 `build/`、`install/`、workspace 外層資料夾）。所以 clone 下來後**不能直接
 > 在 repo 根目錄 `colcon build`**，必須先建立一個 workspace 資料夾，把這個 repo 放進它的
-> `src/` 底下，才能編譯。完整步驟見下方 [3. 環境建置與啟動](#3-環境建置與啟動ros-2-humble)，
+> `src/` 底下，才能編譯。完整步驟見下方 [3. 環境建置與啟動]
 > 尤其是 [3.1](#31-第一次建置工作空間依序執行)。
 
 本 repo 共 **9 個 ROS 2 package**：1 個機器人描述包（`hiwin_dual_arm_description`）、
