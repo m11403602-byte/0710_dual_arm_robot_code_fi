@@ -2,7 +2,7 @@
 
 本工作區（`~/hiwin_ws/src/`）共有 **9 個 ROS 2 package**：機器人描述包
 `hiwin_dual_arm_description`、MoveIt2 設定包 `hiwin_dual_arm`、
-實機跨域橋接包 `dual_arm_domain_bridge`，以及 6 個可插拔的雙臂避障規劃器。
+實機跨域橋接包 `dual_arm_domain_bridge`，以及 6 個可選擇的雙臂避障規劃器。
 各規劃器的演算法推導與參數對照表，請見其各自的 `README.md` 與 `PARAMETERS.md`。
 
 ---
