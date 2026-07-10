@@ -187,11 +187,11 @@ ros2 service call /gpio_controller/set_io hiwin_msgs/srv/SetIO \
 
 Planning 分頁：Start State 選 `<current state>`，**Query Start State** 取消勾選
 
-<p align="center"><img src="docs/images/rviz_planning.png" alt="RViz 規劃畫面 Planning" width="600"></p>
+<p align="center"><img src="docs/images/rviz_planning.png" alt="RViz 規劃畫面 Planning" width="800"></p>
 
 Joints 頁面：以滑桿逐軸調整目標關節角，與拖曳 marker 兩種方式可互相搭配。
 
-<p align="center"><img src="docs/images/rviz_Joints.png" alt="RViz 規劃畫面 Joints" width="600"></p>
+<p align="center"><img src="docs/images/rviz_Joints.png" alt="RViz 規劃畫面 Joints" width="800"></p>
 
 ---
 
