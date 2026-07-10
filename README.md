@@ -1,6 +1,6 @@
 # HIWIN 雙機械手臂 ROS 2（Humble）避障路徑規劃使用手冊
 
-本工作區（`~/hiwin_ws/src/`）共有 **9 個 ROS 2 package**：機器人描述包
+本工作區（`~/hiwin_ws/src/`）共有**9 個 ROS 2 package**：機器人描述包
 `hiwin_dual_arm_description`、MoveIt2 設定包 `hiwin_dual_arm`、
 實機跨域橋接包 `dual_arm_domain_bridge`，以及 6 個可選擇的雙臂避障規劃器。
 各規劃器的演算法推導與參數對照表，請見其各自的 `README.md` 與 `PARAMETERS.md`。
@@ -11,9 +11,8 @@
 
 HIWIN 雙機械手臂（A 臂 RA610-1476 與 B 臂 RA605-710，面對面對裝、相距 1400mm）
 共用同一工作空間，兩臂的關節軌跡可能互撞。本 workspace 的功能是：給定兩臂各自的
-起點與終點關節角，自動規劃出一條**兩臂互不碰撞**的關節空間軌跡。避障演算法包成
-**MoveIt2 規劃器插件**，在 `move_group` 中作為 `planning_plugin` 使用；實機運行時，
-再由跨域橋接層將軌跡送往兩臂各自的驅動端執行。
+起點與終點關節角，自動規劃出一條兩臂互不碰撞的關節空間軌跡。避障演算法包成
+**MoveIt2 規劃器插件**，在 `move_group` 中作為 `planning_plugin` 使用；實機運行時，再由跨域橋接層將軌跡送往兩臂各自的驅動端執行。
 
 ---
 
@@ -73,7 +72,7 @@ colcon build --symlink-install
 
 ## 4. 實機控制指令
 
-實機採 **domain 隔離**：主機（規劃端）與兩臂驅動端各在不同的 `ROS_DOMAIN_ID`，
+實機採 domain 隔離：主機（規劃端）與兩臂驅動端各在不同的 `ROS_DOMAIN_ID`，
 由 `dual_arm_domain_bridge` 負責跨域連接——將兩臂的 `joint_states` 合併後交給主機，
 並把 `FollowJointTrajectory` action 的軌跡與執行回報在 domain 之間轉送：
 
