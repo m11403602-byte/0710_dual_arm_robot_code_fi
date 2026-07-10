@@ -164,7 +164,7 @@ ros2 service call /gpio_controller/set_io hiwin_msgs/srv/SetIO \
 在 RViz 左側 **MotionPlanning** 面板 → **Context** 分頁 → **Planning Library**
 下拉選單中，選擇 6 個 `dual_arm_*` 規劃器之一。
 
-![RViz 規劃畫面 Context](docs/images/rviz_context.png)
+<img src="docs/images/rviz_context.png" alt="RViz 規劃畫面 Context" width="600">
 
 ---
 
@@ -187,11 +187,11 @@ ros2 service call /gpio_controller/set_io hiwin_msgs/srv/SetIO \
 
 Planning 分頁：Start State 選 `<current state>`，**Query Start State** 取消勾選
 
-![RViz 規劃畫面 Planning](docs/images/rviz_planning.png)
+<img src="docs/images/rviz_planning.png" alt="RViz 規劃畫面 Planning" width="600">
 
 Joints 頁面：以滑桿逐軸調整目標關節角，與拖曳 marker 兩種方式可互相搭配。
 
-![RViz 規劃畫面 Joints](docs/images/rviz_Joints.png)
+<img src="docs/images/rviz_Joints.png" alt="RViz 規劃畫面 Joints" width="600">
 
 ---
 
