@@ -1,4 +1,4 @@
-# HIWIN 雙臂機械手 ROS 2 (Humble) 避障路徑規劃工作區 — 使用手冊
+# HIWIN 雙臂機械手 ROS 2 (Humble) 避障路徑規劃使用手冊
 
 本工作區（`~/hiwin_ws/src/`）共有 **9 個 ROS 2 package**：機器人描述包
 `hiwin_dual_arm_description`、MoveIt2 設定包 `hiwin_dual_arm`、
